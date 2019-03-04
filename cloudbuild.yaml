@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/cloud-builders/go'
+  args: ['install', '.']
+  env: ['PROJECT_ROOT=github.com/mi-jones/codelab']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['build', 'github.com/mi-jones/codelab']
+  env: ['PROJECT_ROOT=github.com/mi-jones/codelab']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['test', 'github.com/mi-jones/codelab/calc/']
+  env: ['PROJECT_ROOT=github.com/mi-jones/codelab']
+artifacts:
+  objects:
+    location: 'gs://jonesmi-codelab/'
+    paths: ['codelab']
+
