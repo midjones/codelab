@@ -8,3 +8,8 @@ func TestAdd(t *testing.T) {
   }
 }
 
+func TestSubtract(t *testing.T) {
+  if a := Subtract(10, 2); a != 8 {
+    t.Errorf("Got %d, expected 8.", a)
+  }
+}
